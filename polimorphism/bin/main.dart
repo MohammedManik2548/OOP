@@ -1,24 +1,37 @@
-void main(List<String> arguments) {
-  Person person = Person();
-  person = Student();
+void main(List<String> args) {
+  
+
+  Rectangle rectangle = Rectangle(5, 15);
+
+  Tringle tringle = Tringle(7, 10);
+
+  
 }
 
-class Person {
-  display() {
-    print("I am a Person");
+abstract class Shape {
+  double area() {
+    return 0;
   }
 }
 
-class Teacher extends Person {
+class Rectangle extends Shape {
+  double length, width;
+
+  Rectangle(this.length, this.width);
+
   @override
-  display() {
-    print("I am a Teacher");
+  double area() {
+    return length * width;
   }
 }
 
-class Student extends Person {
+class Tringle extends Shape {
+  double base, height;
+
+  Tringle(this.base, this.height);
+
   @override
-  display() {
-    print("I am a Student");
+  double area() {
+    return 0.5 * base * height;
   }
 }
